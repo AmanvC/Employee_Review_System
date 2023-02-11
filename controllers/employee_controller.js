@@ -33,3 +33,10 @@ module.exports.createEmployee = async function(req, res){
 module.exports.createSession = function(req, res){
     return res.redirect('/home');
 }
+
+module.exports.logout = function(req, res){
+    if(req.isAuthenticated()){
+        req.logout(() => {});
+    }
+    return res.redirect('/');
+}

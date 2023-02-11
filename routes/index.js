@@ -9,5 +9,6 @@ router.get('/sign-up', employeeController.signUp);
 router.get('/home', passport.checkAuthentication, employeeController.home);
 router.post('/create-employee', employeeController.createEmployee);
 router.post('/create-session', passport.authenticate('local', {failureRedirect: '/'}), employeeController.createSession)
+router.get('/logout', passport.checkAuthentication, employeeController.logout);
 
 module.exports = router;
