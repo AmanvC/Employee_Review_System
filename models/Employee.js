@@ -29,7 +29,7 @@ const employeeSchema = new mongoose.Schema({
     }],
     pendingReviews: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Review'
+        ref: 'Employee'
     }]
 }, {
     timestamps: true
