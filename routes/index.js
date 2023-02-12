@@ -17,6 +17,7 @@ router.get('/profile/:ADID', passport.checkAuthentication, employeeController.pr
 router.post('/update-user', passport.checkAuthentication, employeeController.updateUser)
 router.post('/destroy-user', passport.checkAuthentication, employeeController.destroyUser);
 router.post('/add-pending-reviews', passport.checkAuthentication, employeeController.addPendingReviews);
-router.post('/submit-employee-review', passport.checkAuthentication, employeeController.submitReview)
+router.post('/submit-employee-review', passport.checkAuthentication, employeeController.submitReview);
+router.post('/update-employee-review', passport.checkAuthentication, employeeController.updateReview);
 
 module.exports = router;

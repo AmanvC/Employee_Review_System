@@ -99,7 +99,12 @@
                     <h1>REVIEWS</h1>
                     <ul>
                         <% for(let review of e.reviews){ %> 
-                            <li><%= review.content %></li>
+                            <!-- <li><%= review.content %></li> -->
+                            <form action="/update-employee-review" method="POST">
+                                <input type="hidden" name="reviewId" value="<%= review.id %>">
+                                <textarea name="content" cols="30" rows="3" style="resize: none" required><%= review.content %></textarea>
+                                <input type="submit" value="Update">
+                            </form>
                         <% } %>
                     </ul>
                     
@@ -143,7 +148,7 @@
             </h2>
             <form action="/submit-employee-review" method="POST">
                 <input type="hidden" name="employee" value="<%= review.id %>">
-                <textarea name="content" cols="30" rows="3" style="resize: none"></textarea>
+                <textarea name="content" cols="30" rows="3" style="resize: none" required></textarea>
                 <input type="submit">
             </form>
         <% } %>

@@ -96,3 +96,8 @@ module.exports.submitReview = async function(req, res){
 
     return res.redirect('back');
 }
+
+module.exports.updateReview = async function(req, res){
+    const review = await Review.findByIdAndUpdate(req.body.reviewId, {content: req.body.content});
+    return res.redirect('back')
+}
