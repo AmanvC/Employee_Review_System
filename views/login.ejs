@@ -1,8 +1,45 @@
-<h1>LOGIN</h1>
-<form action="/create-session" method="POST">
-    <input type="text" name="ADID" placeholder="Your ADID" required>
-    <input type="password" name="password" placeholder="Your password" required>
-    <input type="submit">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Aurora Employee <span style="color: rgba(0, 0, 255, 0.445)">Review</span> System</h1>
+    <p>Login or <span id="signup-button">signup</span> to continue</p>
+    <div id="login-container">
+        <form action="/create-session" method="POST">
+            <p class="input-detail">Enter ADID:</p>
+            <input type="text" name="ADID" placeholder="Your ADID" required>
+            <p class="input-detail">Enter Password:</p>
+            <input type="password" name="password" placeholder="Your password" required>
+            <button class="submit-button">Login</button>
+        </form>
+    </div>
 
-<a href="/sign-up">Signup</a>
+    
+    <div id="signup-container">
+        <div id="signup-form">
+            <span id="close"><i class="fa-solid fa-xmark"></i></span>
+            <h1> <span style="font-size: 50px; color: rgba(0, 0, 255, 0.445)">Sign up </span> here!</h1>
+            <form action="/create-employee" method="POST">
+                <p class="input-detail">First Name:</p>
+                <input type="text" name="firstName" placeholder="First Name" required>
+                <p class="input-detail">Last Name:</p>
+                <input type="text" name="lastName" placeholder="Last Name" required>
+                <p class="input-detail">Enter ADID:</p>
+                <input type="text" name="ADID" placeholder="Your ADID" required>
+                <p class="input-detail">Enter Password:</p>
+                <input type="password" name="password" placeholder="Password" required>
+                <button class="submit-button">Signup</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/login.js"></script>
+</body>
+</html>
