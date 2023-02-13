@@ -20,8 +20,6 @@ app.use(sassMiddleware({
     prefix: '/css'
 }))
 
-// app.set('layout extractStyles', true);
-// app.set('layout extractScripts', true);
 app.use(express.static('assets'));
 
 app.use(session({
