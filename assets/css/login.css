@@ -47,7 +47,8 @@ body {
     padding: 20px;
     border-radius: 20px;
     display: flex;
-    gap: 30px; }
+    gap: 30px;
+    margin-bottom: 5px; }
     body #login-container .submit-button {
       position: relative;
       left: 270px; }
@@ -106,7 +107,10 @@ body {
         margin-top: 60px; }
       body #signup-container #signup-form form {
         display: flex;
-        padding: 50px;
+        padding: 20px 50px;
+        border-radius: 20px;
+        margin-top: 30px;
+        background-color: whitesmoke;
         width: 100%;
         flex-direction: column; }
         body #signup-container #signup-form form input {

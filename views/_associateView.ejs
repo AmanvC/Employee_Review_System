@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/_associateView.css">
+
+<div id="associate-view">
+    <!-- <h1><%= pendingReviews %></h1> -->
+    <div id="heading">
+        <% if(pendingReviews.length !== 0){ %>
+            <h1>Pending Tasks: <br>Please add a <span style="color: rgba(0, 0, 255, 0.445); font-weight: 600">review</span> to the assigned employees.(Anonymous)</h1>     
+        <% }else{ %>
+            <h1>No employees to <span style="color: rgba(0, 0, 255, 0.445); font-weight: 600">review</span>.</h1>    
+        <% } %>
+    </div>
+    <div id="content">
+        <% for(let review of pendingReviews){ %>
+            <div class="review-container">
+                <div class="employee-details">
+                    <div class="initials">
+                        <p><%= review.firstName[0] %><%= review.lastName[0] %></p>
+                    </div>
+                    <div class="details">
+                        <p class="name"><%= review.firstName %> <%= review.lastName %></p>
+                        <p class="adid"><%= review.ADID %></p>
+                    </div>
+                </div>
+                <form action="/submit-employee-review" method="POST">
+                    <input type="hidden" name="employee" value="<%= review.id %>">
+                    <textarea name="content" cols="30" placeholder="Add your comments here..." rows="3" style="resize: none" required></textarea>
+                    <button>Submit</button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="/css/_adminView.css">
+
+<div id="admin-view">
+    <div id="employees-list-container">
+        <% for(let e of employeesList){ %> 
+            <div class="employee-details">
+                <% if(e.ADID !== user.ADID){ %>
+                    <button onclick="showContainer('<%= e.ADID %>', '<%= e.ADID %>-<%= e.role %>')">
+                        <p id="<%= e.ADID %>"><%= e.firstName %> <%= e.lastName %></p>
+                        <p><%= e.ADID %></p>
+                    </button>
+                <% } %>
+            </div>
+        <% } %>
+    </div>
+    
+    
+    <div id="employee-profile-container">
+        <% for(let e of employeesList){ %> 
+            <div id="more-details-container" class="more-details <%= e.ADID %>" style="display: none">
+        
+                <div id="delete-employee">
+                    <form action="/destroy-user" method="POST">
+                        <input type="hidden" name="ADID" value="<%= e.ADID %>">
+                        <input type="submit" value="Delete">
+                    </form>
+                </div>
+        
+                <div id="employee-detail" >
+                    <h1 ><%= e.firstName %> and <%= e.ADID %></h1>
+                    <form action="/update-user" method="POST">
+                        <input type="text" name="firstName" value="<%= e.firstName %>" required>
+                        <input type="text" name="lastName" value="<%= e.lastName %>" required>
+                        <input type="hidden" name="ADID" value="<%= e.ADID %>" >
+                        <input type="hidden" name="password" value="<%= e.password %>" >
+        
+                        <label>
+                            <input type="radio" name="role" id="<%= e.ADID %>-Admin" value="Admin">
+                            Admin
+                        </label>
+                        <label>
+                            <input type="radio" name="role" id="<%= e.ADID %>-Associate" value="Associate">
+                            Associate
+                        </label>
+                        <input type="submit">
+                    </form>
+                </div>
+        
+                <div id="review-container">
+                    <h1>REVIEWS</h1>
+                    <ul>
+                        <% for(let review of e.reviews){ %> 
+                            <form action="/update-employee-review" method="POST">
+                                <input type="hidden" name="reviewId" value="<%= review.id %>">
+                                <textarea name="content" cols="30" rows="3" style="resize: none" required><%= review.content %></textarea>
+                                <input type="submit" value="Update">
+                            </form>
+                        <% } %>
+                    </ul>
+                </div>
+        
+                <div id="assign-reviews">
+                    <form action="/add-pending-reviews" method="POST">
+                        <input type="hidden" name="employeeID" value="<%= e.ADID %>">
+                        <% for(let emp of employeesList){ %> 
+                            <% if(emp.ADID !== user.ADID && emp.ADID !== e.ADID && e.pendingReviews.indexOf(emp.id) === -1){ %>
+                                <label>
+                                    <input type="checkbox" name="pendingReviews" value="<%= emp.id %>"><%= emp.firstName %>
+                                </label>
+                            <% } %>
+                        <% } %>
+                        <input type="submit">
+                        
+                    </form>
+                </div>
+        
+            </div>
+        <% } %>
+    </div>
+</div>

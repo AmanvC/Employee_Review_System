@@ -1,0 +1,69 @@
+#associate-view {
+  margin: 20px;
+  border: 1px dashed gray;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 1px 1px 10px gray;
+  height: calc(100vh - 250px); }
+  #associate-view h1 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-weight: 100; }
+  #associate-view #content {
+    overflow: scroll;
+    height: 70%; }
+    #associate-view #content .review-container {
+      padding: 20px;
+      border: 1px dashed gray;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 2px 2px 10px lightgray; }
+      #associate-view #content .review-container .employee-details {
+        display: flex; }
+        #associate-view #content .review-container .employee-details .initials {
+          height: 80px;
+          width: 80px;
+          border-radius: 50%;
+          background-color: rgba(0, 0, 255, 0.445);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 30px;
+          margin-right: 15px; }
+        #associate-view #content .review-container .employee-details .details {
+          display: flex;
+          flex-direction: column;
+          justify-content: center; }
+          #associate-view #content .review-container .employee-details .details .name {
+            font-size: 24px; }
+          #associate-view #content .review-container .employee-details .details .adid {
+            font-size: 14px;
+            color: gray; }
+      #associate-view #content .review-container form {
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        #associate-view #content .review-container form textarea {
+          width: 80%;
+          padding: 10px;
+          font-size: 20px;
+          border-radius: 10px;
+          border: 1px dashed gray; }
+          #associate-view #content .review-container form textarea::placeholder {
+            opacity: 0.35; }
+          #associate-view #content .review-container form textarea:focus {
+            outline: none; }
+        #associate-view #content .review-container form button {
+          border: none;
+          background-color: black;
+          padding: 10px 15px;
+          border-radius: 10px;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer; }
+          #associate-view #content .review-container form button:active {
+            transform: scale(0.95); }

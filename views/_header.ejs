@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/css/_header.css">
+
+<header>
+    <div id="welcome">
+        <span>
+            Welcome: 
+            <span style="color: rgba(0, 0, 255, 0.445)">
+                <%= locals.user.firstName %> <%= locals.user.lastName %>
+                <br>
+                <% if(locals.user.role === 'Admin'){ %>
+                    (Admin)    
+                <% }else{ %>
+                    (Associate)    
+                <% } %>
+            </span>
+        </span>
+        <div id="header-buttons">
+            <% if(locals.user.role === 'Admin'){ %>
+                <button id="add-employee" class="button">Add Employee</button>
+            <% } %>
+            <button id="logout-button" class="button"><a href="/logout">Logout</a></button>
+        </div>
+    </div>
+    
+    <div id="add-employee-form">
+        <% if(locals.user.role === 'Admin'){ %> 
+            <div id="form-container">
+                <h1>Add<span style="font-size: 50px; color: rgba(0, 0, 255, 0.445)"> Employee!</span></h1>
+                <span id="close"><i class="fa-solid fa-xmark"></i></span>
+                <form action="/create-employee" method="POST">
+                    <p class="input-detail">First Name:</p>
+                    <input type="text" name="firstName" 
+                    placeholder="Employee First Name" required>
+                    <p class="input-detail">Last Name:</p>
+                    <input type="text" name="lastName" placeholder="Employee Last Name" required>
+                    <p class="input-detail">Enter ADID:</p>
+                    <input type="text" name="ADID" placeholder="Employee ADID" required>
+                    <div id="radioboxes">
+                        <label>
+                            <input type="radio" name="role" value="Admin">
+                            Admin
+                        </label>
+                        <label>
+                            <input type="radio" name="role" value="Associate">
+                            Associate
+                        </label>
+                    </div>
+                    <button class="button">Add</button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+
+</header>
+
+<script src="./js/_header.js"></script>

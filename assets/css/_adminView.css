@@ -1,0 +1,43 @@
+#admin-view {
+  margin: 20px;
+  height: 65vh;
+  display: flex;
+  gap: 50px; }
+  #admin-view #employees-list-container {
+    padding: 20px;
+    width: 250px;
+    height: 100%;
+    border: 1px dashed gray;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px gray;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    gap: 0 0 20px 0; }
+    #admin-view #employees-list-container .employee-details button {
+      padding: 10px 0;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      border-bottom: 2px solid lightgray; }
+      #admin-view #employees-list-container .employee-details button:hover {
+        transform: scale(1.05);
+        color: rgba(0, 0, 255, 0.445);
+        cursor: pointer; }
+      #admin-view #employees-list-container .employee-details button p:nth-child(1) {
+        font-size: 20px;
+        font-weight: 400; }
+      #admin-view #employees-list-container .employee-details button p:nth-child(2) {
+        font-size: 14px;
+        color: gray; }
+  #admin-view #employee-profile-container {
+    width: calc(100% - 300px);
+    height: 100%; }
+    #admin-view #employee-profile-container .more-details {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      border: 1px dashed gray;
+      border-radius: 10px;
+      box-shadow: 1px 1px 10px gray; }
