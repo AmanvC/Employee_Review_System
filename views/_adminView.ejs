@@ -76,7 +76,7 @@
                             <% for(let emp of employeesList){ %> 
                                 <% if(emp.ADID !== user.ADID && emp.ADID !== e.ADID && e.pendingReviews.indexOf(emp.id) === -1){ %>
                                     <label>
-                                        <input type="checkbox" name="pendingReviews" value="<%= emp.id %>"><%= emp.firstName %>
+                                        <input type="checkbox" name="pendingReviews" value="<%= emp.id %>"><%= emp.firstName %> - <%= emp.ADID %>
                                     </label>
                                 <% } %>
                             <% } %>
