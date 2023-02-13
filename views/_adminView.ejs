@@ -22,56 +22,69 @@
                 <div id="delete-employee">
                     <form action="/destroy-user" method="POST">
                         <input type="hidden" name="ADID" value="<%= e.ADID %>">
-                        <input type="submit" value="Delete">
+                        <button><i class="fa-solid fa-triangle-exclamation"></i>&nbsp;Delete Employee</button>
                     </form>
                 </div>
         
                 <div id="employee-detail" >
-                    <h1 ><%= e.firstName %> and <%= e.ADID %></h1>
+                    <!-- <h1 ><%= e.firstName %> and <%= e.ADID %></h1> -->
                     <form action="/update-user" method="POST">
-                        <input type="text" name="firstName" value="<%= e.firstName %>" required>
-                        <input type="text" name="lastName" value="<%= e.lastName %>" required>
-                        <input type="hidden" name="ADID" value="<%= e.ADID %>" >
-                        <input type="hidden" name="password" value="<%= e.password %>" >
-        
-                        <label>
-                            <input type="radio" name="role" id="<%= e.ADID %>-Admin" value="Admin">
-                            Admin
-                        </label>
-                        <label>
-                            <input type="radio" name="role" id="<%= e.ADID %>-Associate" value="Associate">
-                            Associate
-                        </label>
-                        <input type="submit">
+                        <div id="container">
+                            <div id="initials">
+                                <p><%= e.firstName[0] %><%= e.lastName[0] %></p>
+                            </div>
+                            <div id="edit-employee">
+                                <input type="text" name="firstName" placeholder="First Name" value="<%= e.firstName %>" required>
+                                <input type="text" name="lastName" placeholder="Last Name" value="<%= e.lastName %>" required>
+                                <input type="hidden" name="ADID" value="<%= e.ADID %>" >
+                            </div>
+                        </div>
+                        <div id="radio-boxes">
+                            <label>
+                                <input type="radio" name="role" id="<%= e.ADID %>-Admin" value="Admin">
+                                Admin
+                            </label>
+                            <label>
+                                <input type="radio" name="role" id="<%= e.ADID %>-Associate" value="Associate">
+                                Associate
+                            </label>
+                            <button>Update</button>
+                        </div>
                     </form>
                 </div>
         
-                <div id="review-container">
-                    <h1>REVIEWS</h1>
-                    <ul>
-                        <% for(let review of e.reviews){ %> 
-                            <form action="/update-employee-review" method="POST">
-                                <input type="hidden" name="reviewId" value="<%= review.id %>">
-                                <textarea name="content" cols="30" rows="3" style="resize: none" required><%= review.content %></textarea>
-                                <input type="submit" value="Update">
-                            </form>
-                        <% } %>
-                    </ul>
-                </div>
-        
-                <div id="assign-reviews">
-                    <form action="/add-pending-reviews" method="POST">
-                        <input type="hidden" name="employeeID" value="<%= e.ADID %>">
-                        <% for(let emp of employeesList){ %> 
-                            <% if(emp.ADID !== user.ADID && emp.ADID !== e.ADID && e.pendingReviews.indexOf(emp.id) === -1){ %>
-                                <label>
-                                    <input type="checkbox" name="pendingReviews" value="<%= emp.id %>"><%= emp.firstName %>
-                                </label>
+                <div id="addto-reviews-container">
+                    <div id="review-container">
+                        <p>Edit <span style="color: rgba(0, 0, 255, 0.445)">Reviews</span></p>
+                        <ul>
+                            <% for(let review of e.reviews){ %> 
+                                <li>
+                                    <form action="/update-employee-review" method="POST">
+                                        <input type="hidden" name="reviewId" value="<%= review.id %>">
+                                        <textarea name="content" cols="30" rows="3" style="resize: none" required><%= review.content %></textarea>
+                                        <button>Update</button>
+                                    </form>
+                                </li>
                             <% } %>
-                        <% } %>
-                        <input type="submit">
-                        
-                    </form>
+                        </ul>
+                    </div>
+            
+                    <div id="assign-reviews">
+                        <p>Assign for <span style="color: rgba(0, 0, 255, 0.445)">Reviews</span></p>
+                        <form action="/add-pending-reviews" method="POST">
+                            <input type="hidden" name="employeeID" value="<%= e.ADID %>">
+                            <% for(let emp of employeesList){ %> 
+                                <% if(emp.ADID !== user.ADID && emp.ADID !== e.ADID && e.pendingReviews.indexOf(emp.id) === -1){ %>
+                                    <label>
+                                        <input type="checkbox" name="pendingReviews" value="<%= emp.id %>"><%= emp.firstName %>
+                                    </label>
+                                <% } %>
+                            <% } %>
+                            
+                            <button>Submit</button>
+                            
+                        </form>
+                    </div>
                 </div>
         
             </div>

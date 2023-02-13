@@ -40,4 +40,146 @@
       padding: 20px;
       border: 1px dashed gray;
       border-radius: 10px;
-      box-shadow: 1px 1px 10px gray; }
+      box-shadow: 1px 1px 10px gray;
+      position: relative; }
+      #admin-view #employee-profile-container .more-details #delete-employee button {
+        padding: 10px;
+        background-color: red;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        box-shadow: 1px 1px 10px gray;
+        font-size: 16px; }
+        #admin-view #employee-profile-container .more-details #delete-employee button:active {
+          transform: scale(0.95); }
+      #admin-view #employee-profile-container .more-details #employee-detail form {
+        border: 1px dashed lightgray;
+        padding: 10px;
+        width: 350px;
+        border-radius: 10px; }
+        #admin-view #employee-profile-container .more-details #employee-detail form #container {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          margin-bottom: 20px; }
+          #admin-view #employee-profile-container .more-details #employee-detail form #container #initials {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 255, 0.445);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px grey; }
+          #admin-view #employee-profile-container .more-details #employee-detail form #container #edit-employee {
+            display: flex;
+            flex-direction: column;
+            gap: 5px; }
+            #admin-view #employee-profile-container .more-details #employee-detail form #container #edit-employee input {
+              padding: 10px;
+              font-size: 16px;
+              font-weight: 400;
+              border: 1px solid lightgray;
+              border-radius: 10px;
+              box-shadow: 1px 1px 5px lightgray; }
+              #admin-view #employee-profile-container .more-details #employee-detail form #container #edit-employee input:focus {
+                outline: none; }
+        #admin-view #employee-profile-container .more-details #employee-detail form #radio-boxes {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center; }
+          #admin-view #employee-profile-container .more-details #employee-detail form #radio-boxes button {
+            padding: 10px;
+            border-radius: 10px;
+            background-color: black;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 2px 2px 10px lightgrey; }
+            #admin-view #employee-profile-container .more-details #employee-detail form #radio-boxes button:active {
+              transform: scale(0.95); }
+      #admin-view #employee-profile-container .more-details #addto-reviews-container {
+        margin-top: 10px;
+        height: 70%;
+        display: flex;
+        gap: 10px; }
+        #admin-view #employee-profile-container .more-details #addto-reviews-container #review-container {
+          height: 100%;
+          width: 350px;
+          padding: 10px 0;
+          border-radius: 10px;
+          border: 1px dashed lightgray;
+          overflow: scroll; }
+          #admin-view #employee-profile-container .more-details #addto-reviews-container #review-container p {
+            margin-left: 10px;
+            font-size: 20px; }
+          #admin-view #employee-profile-container .more-details #addto-reviews-container #review-container ul {
+            list-style: none;
+            padding: 0; }
+            #admin-view #employee-profile-container .more-details #addto-reviews-container #review-container ul li {
+              margin: 10px 0; }
+          #admin-view #employee-profile-container .more-details #addto-reviews-container #review-container form {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly; }
+            #admin-view #employee-profile-container .more-details #addto-reviews-container #review-container form textarea {
+              width: 70%;
+              padding: 10px;
+              font-size: 20px;
+              border-radius: 10px;
+              border: 1px solid lightgray; }
+              #admin-view #employee-profile-container .more-details #addto-reviews-container #review-container form textarea::placeholder {
+                opacity: 0.35; }
+              #admin-view #employee-profile-container .more-details #addto-reviews-container #review-container form textarea:focus {
+                outline: none; }
+            #admin-view #employee-profile-container .more-details #addto-reviews-container #review-container form button {
+              border: none;
+              background-color: black;
+              padding: 10px;
+              border-radius: 10px;
+              color: #fff;
+              font-size: 16px;
+              cursor: pointer; }
+              #admin-view #employee-profile-container .more-details #addto-reviews-container #review-container form button:active {
+                transform: scale(0.95); }
+        #admin-view #employee-profile-container .more-details #addto-reviews-container #assign-reviews {
+          width: 260px;
+          height: 100%;
+          padding: 10px;
+          border-radius: 10px;
+          border: 1px dashed lightgray;
+          position: relative; }
+          #admin-view #employee-profile-container .more-details #addto-reviews-container #assign-reviews p {
+            font-size: 20px;
+            margin-bottom: 20px; }
+          #admin-view #employee-profile-container .more-details #addto-reviews-container #assign-reviews form {
+            display: flex;
+            flex-direction: column;
+            height: 80%;
+            overflow: scroll; }
+            #admin-view #employee-profile-container .more-details #addto-reviews-container #assign-reviews form label {
+              font-size: 20px;
+              margin: 5px 0;
+              cursor: pointer;
+              display: flex;
+              gap: 10px; }
+            #admin-view #employee-profile-container .more-details #addto-reviews-container #assign-reviews form button {
+              position: absolute;
+              right: 20px;
+              bottom: 20px;
+              border: none;
+              background-color: black;
+              padding: 10px;
+              border-radius: 10px;
+              color: #fff;
+              font-size: 16px;
+              cursor: pointer; }
+              #admin-view #employee-profile-container .more-details #addto-reviews-container #assign-reviews form button:active {
+                transform: scale(0.95); }
